@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structura rețelei</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Alba Alexandru-Armin</h1>
+        <p>Alba.Ra.Alexandru@student.utcluj.ro</p>
+    </header>
+
+    <div class="container">
+        <!-- Componente și caracteristici -->
+        <section class="section" id="componente">
+            <h2>Componente și caracteristici</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Denumire</th>
+                        <th>Producător</th>
+                        <th>Parametri</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Router</td>
+                        <td>TP-Link</td>
+                        <td>300 Mbps</td>
+                    </tr>
+                    <tr>
+                        <td>Switch</td>
+                        <td>Cisco</td>
+                        <td>8 porturi</td>
+                    </tr>
+                    <tr>
+                        <td>PC</td>
+                        <td>Lenovo</td>
+                        <td>Intel i5, 8GB RAM</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Structura rețelei -->
+        <section class="section" id="structura-retelei">
+            <h2>Structura rețelei</h2>
+           <img src="poza1/poza1.jpg" alt="Diagrama rețelei" style="width: 100%; max-width: 600px; display: block; margin: 0 auto;">
+        </section>
+
+        <!-- Caracteristici conexiune rețea -->
+        <section class="section" id="caracteristici-conexiune">
+            <h2>Caracteristici conexiune rețea</h2>
+            <ul>
+                <li>Viteză: 1 Gbps</li>
+                <li>Tip conexiune: LAN</li>
+                <li>Proprietăți: Rețea de tip stea</li>
+            </ul>
+        </section>
+
+        <!-- Monitorizare resurse -->
+        <section class="section" id="monitorizare-resurse" ondblclick="startSlideshow()">
+            <h2>Monitorizare resurse</h2>
+            <div class="images" id="imageContainer">
+                <img src="poza1/poza2.jpeg" alt="Monitorizare resurse" class="slideshowImage">
+                <img src="poza1/poza2.jpeg" alt="Monitorizare resurse" class="slideshowImage">
+                <img src="poza1/poza2.jpeg" alt="Monitorizare resurse" class="slideshowImage">
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 - Structura rețelei personale</p>
+    </footer>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.slideshowImage');
+        const totalImages = images.length;
+
+        // Ascunde toate imaginile inițial
+        function hideAllImages() {
+            images.forEach(img => img.style.display = 'none');
+        }
+
+        // Afișează următoarea imagine din slideshow
+        function showNextImage() {
+            hideAllImages();
+            images[currentImageIndex].style.display = 'block';
+            currentImageIndex = (currentImageIndex + 1) % totalImages;
+        }
+
+        // Start slideshow la dublu click
+        function startSlideshow() {
+            hideAllImages(); // Ascunde imagini
+            images[0].style.display = 'block'; // Afișează prima imagine
+            setInterval(showNextImage, 3000); // Schimbă imaginea la fiecare 3 secunde
+        }
+    </script>
+</body>
+</html>
